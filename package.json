@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node login.view.js",
+    "start": "node login.view.ejs",
     "test": "node test.js"
   },
   "dependencies": {
