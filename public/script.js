@@ -1,7 +1,8 @@
 var testApp = angular.module("testApp", []);
-var pg = require('pg');    
 testApp.controller('testController' , function ($scope, $http, $window) {
+
     $scope.getRequest = function () {
+        var pg = require('pg');            
         pg.connect(process.env.HEROKU_POSTGRESQL_AMBER_URL, function(err, client, done)
         {
             if(err)
