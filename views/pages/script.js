@@ -2,26 +2,25 @@ var testApp = angular.module("testApp", []);
 testApp.controller('testController' , function ($scope, $http, $window) {
     //$return dene!
     $scope.getRequest = function () {
-  
+        var pg = require('pg');
+        pg.connect(process.env.HEROKU_POSTGRESQL_AMBER_URL, function(err, client, done)
+        {
+            if(err)
+            {
+                return console.error('Client error.', err);
+            }
+            
+            client.query('select * from User', function(err, result){
+                done();
+                if(err)
+                {
+                    return console.error('Query error.', err);
+                }
+                console.log(result.rows);
+
+            });
+        });
     } 
-    
-    $scope.accessDatabase = function () {
-
-    }
-
-/*
-        $http({
-            url: 'https://thworkorderfapp.azurewebsites.net/api/HttpTriggerSqlDatabase', 
-             method: "GET",
-            params: {username: '',
-                     password: ''
-                    }
-        }) 
-        .then(function(response){
-            $scope.data = response.data;
-         })
-        .error(function (data, status, headers, config) {
-        });*/
  
 });
 
