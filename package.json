@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
+    "prestart": "npm install -g npm@latest",
     "start": "node index.ejs",
     "test": "node test.js"
   },
@@ -19,7 +19,7 @@
     "ejs": "^2.5.6",
     "express": "latest",
     "html5-boilerplate": "^5.3.0",
-    "pg": "^5.5.1"
+    "pg": "^5.6.0"
   },
   "devDependencies": {
     "bower": "^1.6.7",
