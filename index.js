@@ -1,8 +1,4 @@
 var express = require('express'),
-    http = require('http'),
-    request = require('request'),
-    bodyParser = require('body-parser'),
-    errorHandler = require('express-error-handler'),
     app = express();
 
 var dbOperations = require("./dbOperations.js");
@@ -22,7 +18,6 @@ app.post('/userdata' , function(req,res) {
 
 app.set('port', process.env.PORT || 5000);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(errorHandler());
 app.listen(app.get('port'), function () {
 });
 
