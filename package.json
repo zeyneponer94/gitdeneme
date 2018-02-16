@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm install -g npm@latest",
-    "start": "node index.ejs",
+    "start": "node index.js",
     "test": "node test.js"
   },
   "dependencies": {
