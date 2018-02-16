@@ -10,6 +10,9 @@ var logFmt = require("logfmt");
 
 app.set('views', path.join(__dirname, 'views'));
 
+app.get('/' , function(req,res) {
+    res.sendStatus(200);
+});
 
 app.post('/userdata' , function(req,res) {
     res.sendStatus(200);
