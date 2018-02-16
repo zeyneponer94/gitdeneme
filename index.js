@@ -10,25 +10,12 @@ var app = express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .all('/userdata', (req, res) =>  res.sendStatus(200))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-      /*
-       var email = req.body.email;
-       var pass = req.body.password;
-       var data = {
-       "Data":""
-       };
-       connection.query("SELECT * from login WHERE email=? and password=? LIMIT 1",[email,pass],function(err, rows, fields){
-       if(rows.length != 0){
-       data["Data"] = "Successfully logged in..";
-       res.json(data);
-       }else{
-       data["Data"] = "Email or password is incorrect.";
-       res.json(data);
-       }
-       });*/
-
+app.all('/userdata' , function(req,res) {
+        dbOperations.userdata(req,res);
+        res.sendStatus(200);
+});
 
 
 
