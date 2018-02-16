@@ -1,5 +1,6 @@
 var express = require('express'),
     app = express();
+var request = require('request');
 
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
