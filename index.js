@@ -19,7 +19,7 @@ var dbOperations = require("./dbOperations.js");
 
 express()
 .use(express.static(path.join(__dirname, 'public')))
-.set('views', path.join(__dirname, 'views'))
+.set('views', path.join(__dirname, '/app/views'))
 .set('view engine', 'ejs')
 .get('/', (req, res) => res.render('pages/index'))
 .post('/userdata', (req, res) => res.sendStatus(200))
