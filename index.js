@@ -21,7 +21,7 @@ router.post('/userdata', (req, res, next) => {
             // Grab data from http request
             const data = {text: req.body.text, complete: false};
             // Get a Postgres client from the connection pool
-            pg.connect(connectionString, (err, client, done) => {
+            pg.connect(conString, (err, client, done) => {
                        // Handle connection errors
                        if(err) {
                        done();
