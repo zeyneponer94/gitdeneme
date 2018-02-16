@@ -1,42 +1,31 @@
 {
-  "name": "gitdeneme",
-  "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
-  "engines": {
-    "node": "9.2.0"
-  },
-  "main": "index.js",
-  "scripts": {
-    "prestart": "npm install -g npm@latest",
-    "start": "node index.js",
-    "test": "node test.js"
-  },
-  "dependencies": {
-    "angular": "~1.6.7",
-    "angular-loader": "~1.6.7",
-    "angular-mocks": "~1.6.7",
-    "angular-route": "~1.6.7",
-    "express": "latest",
-    "html5-boilerplate": "^5.3.0"
-  },
-  "devDependencies": {
-    "bower": "^1.6.7",
-    "request": "^2.83.0",
-    "tape": "^4.7.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zeyneponer94/gitdeneme.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zeyneponer94/gitdeneme/issues"
-  },
-  "homepage": "https://github.com/zeyneponer94/gitdeneme#readme",
-  "author": ""
+    "name": "node-js-getting-started",
+    "version": "0.3.0",
+    "description": "A sample Node.js app using Express 4",
+    "engines": {
+        "node": "8.9.1"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "node test.js"
+    },
+    "dependencies": {
+        "ejs": "^2.5.6",
+        "express": "^4.15.2"
+    },
+    "devDependencies": {
+        "request": "^2.81.0",
+        "tape": "^4.7.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zeyneponer94/gitdeneme"
+    },
+    "keywords": [
+                 "node",
+                 "heroku",
+                 "express"
+                 ],
+    "license": "MIT"
 }
