@@ -33,22 +33,7 @@ module.exports = {
                     });
         });
         
-/*
-        var client = new pg.Client(conString);
-        
-        client.connect();
-        
-        
-        var query = client.query("insert into user_data (username__c, password__c) "+
-                                 "values ('"+req.query.username_id+"','"+req.query.password_id+"')");
-        
-        query.on("end", function (result) {
-                 client.end();
-                 res.write('Success');
-                 res.end();
-                 });
-        
-    }*/
+
  
     
 };
