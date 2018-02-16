@@ -11,10 +11,11 @@ var app = express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .all('/userdata', (req, res) => res.sendStatus(200))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*
+ .all('/userdata', (req, res) => res.sendStatus(200))
+
 
 app.all('/userdata' , function(req,res) {
         //dbOperations.userdata(req,res);
