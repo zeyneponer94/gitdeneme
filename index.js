@@ -14,10 +14,9 @@ var app = express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-
 app.all('/userdata' , function(req,res) {
-        dbOperations.userdata(req,res);
-        res.sendStatus(200);
+        //dbOperations.userdata(req,res);
+        res.send(req.body);
 });
 
 
