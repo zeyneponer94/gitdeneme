@@ -20,6 +20,7 @@ router.post('/userdata', (req, res, next) => {
             const results = [];
             // Grab data from http request
             const data = {text: req.body};
+            var obj = JSON.parse(data);
             // Get a Postgres client from the connection pool
             pg.connect(conString, (err, client, done) => {
                        // Handle connection errors
@@ -30,7 +31,7 @@ router.post('/userdata', (req, res, next) => {
                        }
                        
                        client.query('INSERT INTO user_data(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)',
-                                    [data.text.user_id, data.text.username, data.text.acc_x, data.text.acc_y, data.text.acc_z, data.text.gyro_x, data.text.gyro_y, data.text.gyro_z, data.text.type, data.text.timestamp]);
+                                    [obj.text.user_id, obj.text.username, obj.text.acc_x, obj.text.acc_y, obj.text.acc_z, obj.text.gyro_x, obj.text.gyro_y, obj.text.gyro_z, obj.text.type, obj.text.timestamp]);
                        // SQL Query > Select Data
                        const query = client.query('SELECT * FROM user_data');
                        // Stream results back one row at a time
