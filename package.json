@@ -27,12 +27,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeyneponer94/gitdeneme"
+    "url": "git+https://github.com/zeyneponer94/gitdeneme.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeyneponer94/gitdeneme/issues"
+  },
+  "homepage": "https://github.com/zeyneponer94/gitdeneme#readme",
+  "author": ""
 }
