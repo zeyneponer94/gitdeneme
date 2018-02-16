@@ -1,6 +1,9 @@
 var express = require('express'),
+    http = require('http'),
+    request = require('request'),
+    bodyParser = require('body-parser'),
+    errorHandler = require('express-error-handler'),
     app = express();
-var request = require('request');
 
 var dbOperations = require("./dbOperations.js");
 var logFmt = require("logfmt");
