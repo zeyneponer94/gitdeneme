@@ -15,37 +15,30 @@ module.exports = {
         client.connect();
         // Grab data from http request
         const data = req.body;
-        var results = [];
         
-        client.query('INSERT INTO user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [data.user_id, data.username, data.acc_x, data.acc_y, data.acc_z, data.gyro_x, data.gyro_y, data.gyro_z, data.type, data.timestamp]);
+        client.query("INSERT INTO user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [data.user_id, data.username, data.acc_x, data.acc_y, data.acc_z, data.gyro_x, data.gyro_y, data.gyro_z, data.type, data.timestamp]);
         
         // SQL Query > Select Data
-        var query = client.query('SELECT * FROM user_data_');
-        // Stream results back one row at a time
-        //var count = 0;
-      /*  query.rows.forEach(row=>{
-             results.push(row);
-             count++;
-        });*/
-        client.end();
-        res.send(query.rows);
+        var query = client.query("SELECT * FROM user_data_");
         
         
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        if (query!=0)
-            res.write(JSON.stringify(results, null, "    ") + "\n");
-        else
-            res.write('0');
-        res.end();
-        /*
-                   query.on('row', (row) => {
-                            results.push(row);
-                            });
-                   // After all data is returned, close connection and return results
-                   query.on('end', () => {
-                            done();
-                            return res.json(results);
-                            });*/
+        var count = 0;
+        
+        query.on("row", function (row, result) {
+                 result.addRow(row);
+                 count++;
+        });
+        query.on("end", function (result) {
+                 client.end();
+                 res.writeHead(200, {'Content-Type': 'text/plain'});
+                 if (count!=0)
+                    res.write(JSON.stringify(result.rows, null, "    ") + "\n");
+                 else
+                    res.write('0');
+                 res.end();
+       });
+  
+       
     }
 
 };
