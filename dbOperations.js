@@ -4,7 +4,7 @@ module.exports = {
     
     userdata : function(req, res){
         
-        res.send("heyoooo");
+        res.send(req.body);
 
 /*
         var pg = require('pg');
