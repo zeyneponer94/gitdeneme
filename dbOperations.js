@@ -8,8 +8,8 @@ module.exports = {
 
         var pg = require('pg');
         
-        //const conString = 'postgres://meivxnuxakxqvi:e501dbd3feafa616c3d31c68cc2c51474064ac1aefdcf395838fb79da3812cca@ec2-54-83-203-198.compute-1.amazonaws.com:5432/d9q6ascc3tnn62';
-        const conString = 'postgres://onerz15@itu.edu.tr:itu_cse_2018@localhost:5000/postgresql-defined-42923'
+        const conString = 'postgres://meivxnuxakxqvi:e501dbd3feafa616c3d31c68cc2c51474064ac1aefdcf395838fb79da3812cca@ec2-54-83-203-198.compute-1.amazonaws.com:5432/d9q6ascc3tnn62';
+       // const conString = 'postgres://onerz15@itu.edu.tr:itu_cse_2018@localhost:5000/postgresql-defined-42923'
         
         var client = new pg.Client(conString);
         client.connect();
