@@ -28,12 +28,13 @@ module.exports = {
              count++;
         });*/
         client.end();
-
+        res.send(""+query);
         res.writeHead(200, {'Content-Type': 'text/plain'});
         if (query!=0)
             res.write(JSON.stringify(results, null, "    ") + "\n");
         else
-            res.send("heyooo");
+            res.write('0');
+        res.send(""+query);
         res.end();
         /*
                    query.on('row', (row) => {
