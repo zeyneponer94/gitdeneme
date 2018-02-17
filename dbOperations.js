@@ -20,7 +20,7 @@ module.exports = {
         client.query("INSERT INTO user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [data.user_id, data.username, data.acc_x, data.acc_y, data.acc_z, data.gyro_x, data.gyro_y, data.gyro_z, data.type, data.timestamp]);
         
         // SQL Query > Select Data
-        var query = client.query("SELECT * FROM user_data");
+        var query = client.query("SELECT * FROM user_data_");
         // Stream results back one row at a time
         var count = 0;
         query.rows.forEach(row=>{
