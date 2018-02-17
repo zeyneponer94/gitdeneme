@@ -3,7 +3,7 @@ module.exports = {
     
     
     userdata : function(req, res){
-/*
+
         var pg = require('pg');
         
         var conString = "postgres://meivxnuxakxqvi:e501dbd3feafa616c3d31c68cc2c51474064ac1aefdcf395838fb79da3812cca@ec2-54-83-203-198.compute-1.amazonaws.com:5432/d9q6ascc3tnn62";
@@ -35,7 +35,7 @@ module.exports = {
                             done();
                             return res.json(results);
                             });
-                   });*/
+                   });
         
                }
         
