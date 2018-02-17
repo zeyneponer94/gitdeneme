@@ -18,17 +18,16 @@ module.exports = {
         
         var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) " + "values ('" + data.user_id+"','"+data.username+"','"+data.acc_x+"','"+data.acc_y+"','"+data.acc_z+"','"+data.gyro_x+"','"+data.gyro_y+"','"+data.gyro_z+"','"+data.type+"','"+data.timestamp+"')");
 
-  /*
+  
         query.on("end", function (result) {
                  client.end();
-                 res.write('Success');
+                 res.send("Success");
                  res.end();
-        });*/
+        });
         
 
-        
+    /*
         // SQL Query > Select Data
-        query = client.query("SELECT * FROM user_data_");
         
         
         var count = 0;
@@ -47,7 +46,7 @@ module.exports = {
                  res.send();
                  res.end();
        });
-  
+  */
        
     }
 
