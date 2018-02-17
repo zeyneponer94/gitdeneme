@@ -14,11 +14,15 @@ module.exports = {
         client.connect();
         const data = req.body;
         
-        res.send(data[0]);
-      /*
-        var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) " + "values ('" + data.user_id+"','"+data.username+"','"+data.acc_x+"','"+data.acc_y+"','"+data.acc_z+"','"+data.gyro_x+"','"+data.gyro_y+"','"+data.gyro_z+"','"+data.type+"','"+data.timestamp+"')");
+        var i = 0;
+        while(data[i] != NULL)
+        {
+      
+            var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) " + "values ('" + data[i].user_id+"','"+data[i].username+"','"+data[i].acc_x+"','"+data[i].acc_y+"','"+data[i].acc_z+"','"+data[i].gyro_x+"','"+data[i].gyro_y+"','"+data[i].gyro_z+"','"+data[i].type+"','"+data[i].timestamp+"')");
+            i++;
+        }
 
-        res.sendStatus(200);*/
+        res.sendStatus(200);
 
     }
 
