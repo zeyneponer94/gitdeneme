@@ -21,7 +21,7 @@ module.exports = {
   
         query.on("end", function (result) {
                  client.end();
-                 res.send("Success");
+                 res.sendStatus(200);
                  res.end();
         });
         
