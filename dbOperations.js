@@ -14,9 +14,11 @@ module.exports = {
         client.connect();
         const data = req.body;
         
+        res.send(data[0]);
+      /*
         var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) " + "values ('" + data.user_id+"','"+data.username+"','"+data.acc_x+"','"+data.acc_y+"','"+data.acc_z+"','"+data.gyro_x+"','"+data.gyro_y+"','"+data.gyro_z+"','"+data.type+"','"+data.timestamp+"')");
 
-        res.sendStatus(200);
+        res.sendStatus(200);*/
 
     }
 
