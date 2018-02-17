@@ -45,8 +45,8 @@ module.exports = {
                    query.on('end', () => {
                             done();
                             return res.json(results);
-                            });
-                   });*/
+                            });*/
+    }
 
 };
 
