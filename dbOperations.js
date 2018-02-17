@@ -22,7 +22,7 @@ module.exports = {
             i++;
         }
 
-        res.sendStatus(200);
+        res.send("DATA ARE SUCCESSFULLY INSERTED");
 
     }
 
