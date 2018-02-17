@@ -33,7 +33,7 @@ module.exports = {
         if (query!=0)
             res.write(JSON.stringify(results, null, "    ") + "\n");
         else
-            res.write('0');
+            res.send("heyooo");
         res.end();
         /*
                    query.on('row', (row) => {
