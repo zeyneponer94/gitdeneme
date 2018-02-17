@@ -18,7 +18,7 @@ module.exports = {
         var query = client.query("INSERT INTO user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [obj.user_id, obj.username, obj.acc_x, obj.acc_y, obj.acc_z, obj.gyro_x, obj.gyro_y, obj.gyro_z, obj.type, obj.timestamp]);
         
         // SQL Query > Select Data
-        const query = client.query("SELECT * FROM user_data");
+         query = client.query("SELECT * FROM user_data");
         // Stream results back one row at a time
         
         var count = 0;
