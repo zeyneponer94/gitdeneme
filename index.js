@@ -13,10 +13,10 @@ app.all('/userdata' , function(req,res) {
 */
 
 const express = require('express')
-var http = require('http'),
-var request = require('request'),
-var bodyParser = require('body-parser'),
-var errorHandler = require('express-error-handler'),
+const http = require('http')
+const request = require('request')
+const bodyParser = require('body-parser')
+const errorHandler = require('express-error-handler')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 var dbOperations = require("./dbOperations.js");
