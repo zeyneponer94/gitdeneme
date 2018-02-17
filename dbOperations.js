@@ -20,9 +20,8 @@ module.exports = {
       
             var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, timestamp) " + "values ('" + data[i].user_id+"','"+data[i].username+"','"+data[i].acc_x+"','"+data[i].acc_y+"','"+data[i].acc_z+"','"+data[i].gyro_x+"','"+data[i].gyro_y+"','"+data[i].gyro_z+"','"+data[i].type+"','"+data[i].timestamp+"')");
             i++;
+            res.sendStatus(200);
         }
-
-        res.send("DATA ARE SUCCESSFULLY INSERTED");
 
     }
 
