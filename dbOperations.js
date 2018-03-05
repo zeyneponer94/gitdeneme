@@ -14,6 +14,9 @@ module.exports = {
         client.connect();
         const data = req.body;
         
+        console.log(data);
+        
+        
         var i = 0;
         while(data[i].user_id != null)
         {
