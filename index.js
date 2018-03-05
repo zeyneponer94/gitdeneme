@@ -22,7 +22,7 @@ var dbOperations = require("./dbOperations.js");
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
-    .use(bodyParser({limit: '50mb'}));
+    .use(bodyParser({limit: '50mb'}))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
