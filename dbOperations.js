@@ -14,13 +14,13 @@ module.exports = {
         client.connect();
         const data = req.body;
         
-        console.log(data);
         
         
         var i = 0;
         while(data[i].user_id != null)
         {
       
+            console.log(data[i].user_id);
             var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + data[i].user_id+"','"+data[i].username+"','"+data[i].acc_x+"','"+data[i].acc_y+"','"+data[i].acc_z+"','"+data[i].gyro_x+"','"+data[i].gyro_y+"','"+data[i].gyro_z+"','"+data[i].type+"','"+data[i].ntrial+"','"+data[i].timestamp+"')");
             i++;
             res.sendStatus(200);
