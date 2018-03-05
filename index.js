@@ -22,9 +22,10 @@ var dbOperations = require("./dbOperations.js");
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
-    .use(bodyParser.urlencoded({extended: true}))
+    .use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}))
+    //.use(bodyParser.urlencoded({extended: true}))
     .use(bodyParser.json())
-    .use(express.json({limit: '50mb'}))
+    .use(express.json({limit: "50mb"}))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
