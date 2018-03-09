@@ -35,7 +35,7 @@ module.exports = {
     }
 
     
-    userdata_ozan : function(req, res){
+    ozan : function(req, res){
         
         
         
