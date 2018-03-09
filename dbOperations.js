@@ -34,6 +34,30 @@ module.exports = {
 
     }
 
+    
+    userdata_ozan : function(req, res){
+        
+        
+        
+        var pg = require('pg');
+        
+        const conString = 'postgres://vxplnflglehgln:694f698cec8b80dcb36b4d9ac26862f3db4c11cf446f1ed03f31683b321a4e71@ec2-107-20-176-27.compute-1.amazonaws.com:5432/d96q4akdodelej';
+        
+        var client = new pg.Client(conString);
+        client.connect();
+        const data = req.body;
+        
+        
+        
+        var i = 0;
+        
+        data.forEach( function(_data){
+                     console.log(_data);
+                     var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + data[i].user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
+                     })
+        res.sendStatus(200);
+        
+    }
 };
 
 
