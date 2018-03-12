@@ -16,11 +16,9 @@ module.exports = {
         
         
         
-        var i = 0;
-        
         data.forEach( function(_data){
             console.log(_data);
-            var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + data[i].user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
+            var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + _data.user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
         })
         res.sendStatus(200);
         /*while(data[i].user_id != null)
@@ -47,13 +45,11 @@ module.exports = {
         client.connect();
         const data = req.body;
         
-        
-        
-        var i = 0;
+       
         
         data.forEach( function(_data){
                      console.log(_data);
-                     var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + data[i].user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
+                     var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + _data.user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
                      })
         res.sendStatus(200);
         
