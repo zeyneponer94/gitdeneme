@@ -32,7 +32,7 @@ module.exports = {
             res.sendStatus(200);
         }*/
 
-    }
+    },
 
     
     ozan : function(req, res){
