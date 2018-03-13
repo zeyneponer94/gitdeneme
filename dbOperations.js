@@ -53,6 +53,28 @@ module.exports = {
                      })
         res.sendStatus(200);
         
+    },
+    
+    nilay : function(req, res){
+        
+        
+        
+        var pg = require('pg');
+        
+        const conString = 'postgres://wzzicdxwkhimhx:c19c50ded70bf03d70babea7ca9c6509355b72bfdb71c907144ba8be61fecccb@ec2-54-83-23-91.compute-1.amazonaws.com:5432/dnm47itvr0eeg';
+        
+        var client = new pg.Client(conString);
+        client.connect();
+        const data = req.body;
+        
+        
+        
+        data.forEach( function(_data){
+                     console.log(_data);
+                     var query = client.query("insert into user_data_(user_id, username, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, type, ntrial, timestamp) " + "values ('" + _data.user_id+"','"+_data.username+"','"+_data.acc_x+"','"+_data.acc_y+"','"+_data.acc_z+"','"+_data.gyro_x+"','"+_data.gyro_y+"','"+_data.gyro_z+"','"+_data.type+"','"+_data.ntrial+"','"+_data.timestamp+"')");
+                     })
+        res.sendStatus(200);
+        
     }
 };
 
