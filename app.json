@@ -2,7 +2,7 @@
   "name": "Start on Heroku: Node.js",
   "description": "A barebones Node.js app using Express 4",
   "repository": "https://github.com/zeyneponer94/gitdeneme",
-  "logo": "https://cdn.rawgit.com/zeyneponer94/gitdeneme/master/public/node.svg",
+  "logo": "https://cdn.jsdelivr.net/gh/zeyneponer94/gitdeneme/public/node.svg",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
 }
